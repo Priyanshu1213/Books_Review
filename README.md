@@ -27,7 +27,7 @@ A full-stack web application that allows users to browse books, read and write r
 
 ## Tech Stack
 
-- **Frontend:** React, React Leaflet, CSS
+- **Frontend:** React,
 - **Backend:** Node.js, Express
 - **Database:** MongoDB
 -
