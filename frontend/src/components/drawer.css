@@ -1,0 +1,38 @@
+/* drawer.css */
+.drawer {
+  
+    position: fixed;
+    top: 20;
+    right: -400px;
+    width: 300px;
+    height:auto;
+border-radius: 5px;
+    background: #f9f9f9;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .drawer.open {
+    right: 0; 
+  }
+  
+  .drawer-content {
+    padding: 20px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    background: #ff0000;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+   /* .drawer_anoop{
+    display: none;
+  } */
