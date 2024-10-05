@@ -17,6 +17,7 @@ A full-stack web application that allows users to browse books, read and write r
 - Error Handling & Loading States: Proper management of error and loading states to enhance user experience.
 - State Management: Implemented using Redux or React Context.
 - Routing: Smooth navigation between pages using React Router.
+
 # Backend
 - RESTful API: Provides endpoints for books, reviews, and user profiles.
 - CRUD Operations: Create, Read, Update, Delete operations for book data and user profiles.
