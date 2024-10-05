@@ -13,7 +13,7 @@ export const listReviews = (bookId) => async (dispatch) => {
   try {
     dispatch({ type: REVIEW_LIST_REQUEST });
     
-    const { data } = await axios.get(`http://localhost:5000/api/reviews?bookId=${bookId}`);
+    const { data } = await axios.get(`https://books-review-4nit.onrender.com/api/reviews?bookId=${bookId}`);
     // console.log(data)
     dispatch({ type: REVIEW_LIST_SUCCESS, payload: data });
   } catch (error) {
@@ -41,7 +41,7 @@ export const createReview = (review) => async (dispatch, getState) => {
       },
     };
 
-   const {data}= await axios.post('http://localhost:5000/api/reviews', review, config);
+   const {data}= await axios.post('https://books-review-4nit.onrender.com/api/reviews', review, config);
     showToast(data.message, true)
     dispatch({ type: REVIEW_CREATE_SUCCESS });
     

@@ -17,7 +17,7 @@ export const listBooks = (currentPage,searchTerm) => async (dispatch) => {
   try {
     dispatch({ type: BOOK_LIST_REQUEST });
 
-    const { data } = await axios.get(`http://localhost:5000/api/books`,{
+    const { data } = await axios.get(`https://books-review-4nit.onrender.com/api/books`,{
       params: {
         pageNumber: currentPage, 
         search: searchTerm        
@@ -50,7 +50,7 @@ export const getBookDetails = (id) => async (dispatch) => {
     },
   };
 
-    const { data } = await axios.get(`http://localhost:5000/api/books/${id}`,config);
+    const { data } = await axios.get(`https://books-review-4nit.onrender.com/api/books/${id}`,config);
     dispatch({ type: BOOK_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     showToast(error.response.data.message, false)
@@ -81,7 +81,7 @@ export const addBook = (bookData) => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.post('http://localhost:5000/api/books', bookData, config );
+    const { data } = await axios.post('https://books-review-4nit.onrender.com/api/books', bookData, config );
     showToast(data.message, true)
     
     dispatch({ type: BOOK_ADD_SUCCESS, payload: data });

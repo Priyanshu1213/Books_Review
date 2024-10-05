@@ -28,7 +28,7 @@ export const login = (email, password) => async (dispatch) => {
       headers: { 'Content-Type': 'application/json' },
     };
 
-    const { data } = await axios.post('http://localhost:5000/api/users/login', { email, password }, config);
+    const { data } = await axios.post('https://books-review-4nit.onrender.com/api/users/login', { email, password }, config);
    
     showToast(data.message, true)
 
@@ -61,7 +61,7 @@ export const register = (name, email, password,admin) => async (dispatch) => {
       headers: { 'Content-Type': 'application/json' },
     };
 
-    const { data } = await axios.post('http://localhost:5000/api/users/register', { name, email, password ,admin}, config);
+    const { data } = await axios.post('https://books-review-4nit.onrender.com/api/users/register', { name, email, password ,admin}, config);
 
     showToast(data.message, true)
 
@@ -94,7 +94,7 @@ export const getUserDetails = (id) => async (dispatch) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.get(`http://localhost:5000/api/users/${id}`, config);
+    const { data } = await axios.get(`https://books-review-4nit.onrender.com/api/users/${id}`, config);
    
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
     
@@ -125,7 +125,7 @@ export const updateUserProfile = (user) => async (dispatch) => {
       },
     };
    
-    const { data } = await axios.put(`http://localhost:5000/api/users/${user._id}`, user, config);
+    const { data } = await axios.put(`https://books-review-4nit.onrender.com/api/users/${user._id}`, user, config);
     showToast(data.message, true)
     dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
     dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
