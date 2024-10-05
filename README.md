@@ -4,7 +4,7 @@ Here's a sample README.md for my project. It covers the basic details about the 
 
 # Book Review Platform
 
-This project is an Employee Management System developed using the MERN (MongoDB, Express, React, Node.js) stack. It includes features such as employee registration, profile management, and basic CRUD operations (Create, Read, Update, Delete) for employee records.
+A full-stack web application that allows users to browse books, read and write reviews, and rate books. The platform includes a React frontend and a Node.js backend using Express and MongoDB.
 
 ## Features
 
