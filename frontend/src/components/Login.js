@@ -33,11 +33,11 @@ const Login = () => {
       <form onSubmit={submitHandler}>
         <div>
           <label>Email</label>
-          <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} required/>
         </div>
         <div>
           <label>Password</label>
-          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
         </div>
         <button type='submit'>Login</button>
       </form>

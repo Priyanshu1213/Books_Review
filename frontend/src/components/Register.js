@@ -39,15 +39,15 @@ return (
       <form onSubmit={submitHandler}>
         <div>
           <label>Name</label>
-          <input type='text' value={name} onChange={(e) => setName(e.target.value) } />
+          <input type='text' value={name} onChange={(e) => setName(e.target.value) } required/>
         </div>
         <div>
           <label>Email</label>
-          <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} required/>
         </div>
         <div>
           <label>Password</label>
-          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
         </div>
     <div className="select-container">
      <select value={admin} onChange={handleSelect} required>
