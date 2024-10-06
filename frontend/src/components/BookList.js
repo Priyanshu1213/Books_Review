@@ -18,12 +18,10 @@ const BookList = () => {
   }
   const bookList = useSelector((state) => state.bookList);
   const { books, loading  } = bookList;
-  // console.log(books.pages)
-  const totalPages=books.pages
-const books1=books.books
- 
-
   
+  const totalPages = books ? books.pages : 1; 
+  const books1 = books ? books.books : []; 
+
 
   useEffect(() => {
     dispatch(listBooks(currentPage));
@@ -32,7 +30,7 @@ const books1=books.books
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    // console.log(page)
+    
   };
 
   if (loading) {
@@ -42,7 +40,7 @@ const books1=books.books
   const userInfoFromStorage = localStorage.getItem('userInfo')
   ? JSON.parse(localStorage.getItem('userInfo'))
   : null;
-  // console.log(userInfoFromStorage)
+ 
  
   return (
     <>

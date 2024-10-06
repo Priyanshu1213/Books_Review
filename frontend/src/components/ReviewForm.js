@@ -26,9 +26,10 @@ const ReviewForm = ({bookId}) => {
           <input
             type='number'
             value={rating}
-            min='1'
+            min='0'
             max='5'
             onChange={(e) => setRating(Number(e.target.value))}
+            
           />
         </div>
         <div>

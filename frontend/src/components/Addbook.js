@@ -42,7 +42,7 @@ const AddBook = () => {
           <input type="text" value={genre} onChange={(e) => setGenre(e.target.value)} required />
         </div>
         <div>
-          <label>Cover Image URL</label>
+          <label>Image URL</label>
           <input type="text" value={coverImage} onChange={(e) => setCoverImage(e.target.value)} />
         </div>
         <button type="submit">Add Book</button>

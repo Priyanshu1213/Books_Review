@@ -3,28 +3,33 @@ const Book = require('../models/Book');
 // @desc    Get all books with pagination
 // @route   GET /books
 // @access  Public
+
 const getBooks = async (req, res) => {
     try {
-        const pageSize = 4;
-        
-        const page = Number(req.query.pageNumber)||1;
-        const searchTerm = req.query.search || ''; 
-
-        const query = searchTerm
-      ? { title: { $regex: searchTerm, $options: 'i' } } 
-      : {};
-
-        const count = await Book.countDocuments(query);
-        const books = await Book.find(query)
+      const pageSize = 4; 
+      const page = Number(req.query.pageNumber) || 1;
+      const searchTerm = req.query.search || ''; 
+  
+     
+      const query = searchTerm ? { title: { $regex: searchTerm, $options: 'i' } } : {};
+  
+      const count = await Book.countDocuments(query); 
+      const books = await Book.find(query)
         .skip(pageSize * (page - 1))
         .limit(pageSize);
-            
-
-        res.json({ books, page, pages: Math.ceil(count / pageSize) });
+  
+      
+      const pages = Math.ceil(count / pageSize) || 1; 
+      res.json({ books, page, pages });
     } catch (error) {
-        res.status(500).json({ message: 'Server Error' });
+      console.error('Server Error:', error.message); 
+      res.status(500).json({ message: 'Server Error', error: error.message });
     }
-};
+  };
+  
+
+
+
 
 // @desc    Get a specific book
 // @route   GET /books/:id

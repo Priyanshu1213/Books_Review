@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBookDetails } from '../actions/bookActions';
 import { listReviews } from '../actions/reviewActions';
-import {  useParams } from 'react-router-dom';
+import {  Link, useParams } from 'react-router-dom';
 import './styles.css'; 
 import ReviewForm from './ReviewForm';
 
@@ -31,6 +31,10 @@ const togglePortal=()=>{
 
 
   return (
+    <>
+
+    <button className='goback' ><Link to='/'> Go Back</Link></button>
+    
     <div className="book-detail-container">
      
       {book ? (
@@ -62,7 +66,9 @@ const togglePortal=()=>{
               reviews.map((review) => (
                 <div key={review._id} className="review-item">
                   <strong>{review.user.name}</strong>
+                 {review.rating > 0 &&
                   <p>Rating: <span>{review.rating}</span></p>
+                  }
                   <p>{review.comment}</p>
                 </div>
               ))}
@@ -72,9 +78,10 @@ const togglePortal=()=>{
         </>
       
       ) : (
-        <h2>please Login for details</h2>
+        <h2>Please Login for details</h2>
       )}
     </div>
+    </>
   );
 };
 

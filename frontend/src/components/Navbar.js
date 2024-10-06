@@ -111,10 +111,22 @@ const Navbar = () => {
       </ul>
     </nav>
 
-<Drawer isOpen={isDrawerOpen} onClose={closeDrawer}>
+
+{ token ? (
+
+  <Drawer isOpen={isDrawerOpen} onClose={closeDrawer}>
         {/* Pass user ID as a prop if needed */}
         <Profile userId={id} />
       </Drawer>
+
+):("")
+
+
+
+
+
+}
+
     </>
   );
 };

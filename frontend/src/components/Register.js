@@ -49,11 +49,14 @@ return (
           <label>Password</label>
           <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <select value={admin} onChange={handleSelect} required>
-      <option value="">Select</option> {/* Set value to an empty string for default option */}
-      <option value="admin">Admin</option>
-      <option value="user">User</option>
-    </select>
+    <div className="select-container">
+     <select value={admin} onChange={handleSelect} required>
+        <option value="">Select</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+     </select>
+    </div>
+
         <button type='submit'>Register</button>
       </form>
     </div>

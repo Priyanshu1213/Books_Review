@@ -24,17 +24,16 @@ export default function Portal({ close, component }) {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      zIndex: 1000, // Ensure it is above other elements
+      zIndex: 1000, 
     },
     content: {
       background: 'white',
       padding: '20px',
       borderRadius: '10px',
       boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
-      width: '50%',
-      maxWidth: '600px',
+      
       textAlign: 'center',
-      position: 'relative', // For positioning the close button
+      position: 'relative', 
     },
     closeButton: {
       position: 'absolute',
